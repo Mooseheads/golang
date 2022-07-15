@@ -18,6 +18,10 @@ type person struct {
 	address
 }
 
+type memaddress struct {
+	value int
+}
+
 func main() {
 	vikram := person{
 		firstName:     "vikram",
@@ -35,6 +39,20 @@ func main() {
 
 	vikram.updateUsername("vikramvns")
 	vikram.print()
+
+	val := memaddress{
+		value: 10,
+	}
+
+	// Print the memory address / RAM address of a struct
+	fmt.Printf("%p\n", &val)
+
+	// Print the value of a struct with the explanation
+	fmt.Printf("%+v", val)
+
+	// Print the value of a struct
+	fmt.Printf("%v", val)
+
 }
 
 func (p person) print() {
