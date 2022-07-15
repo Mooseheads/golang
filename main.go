@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+type address struct {
+	streetName string
+	houseNo    int
+	pincode    int
+}
+
 type person struct {
 	firstName     string
 	lastName      string
@@ -9,6 +15,7 @@ type person struct {
 	fanof         string
 	username      string
 	teamsFollowed []string
+	address
 }
 
 func main() {
@@ -19,6 +26,11 @@ func main() {
 		age:           40,
 		fanof:         "Arsenal FC",
 		teamsFollowed: []string{"CSK", "Barca", "Juve"},
+		address: address{
+			streetName: "clyde street",
+			houseNo:    2247,
+			pincode:    450506,
+		},
 	}
 
 	vikram.updateUsername("vikramvns")
